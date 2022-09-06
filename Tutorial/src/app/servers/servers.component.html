@@ -1,3 +1,15 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer" >Add Server</button>  <!-- to make it dynamica use [] -->
+<button class="btn btn-primary" [disabled]="!allowNewServer" >Add Server</button>  <!-- to make it dynamic use []; allowNewServer is in the server.component.ts file;
+ with the exlamation mark, you make shure that is only disabled if this if false-->
+<p [innerText]="allowNewServer"></p>
+<!-- Well basically if you want to output something in your template, print some text to it, use string interpolation,
+if you want to change some property, be that of a HTML element or as you will later learn of directive or component,
+typically use property binding, that is how you can differentiate it and you will get a feeling for this once you work your way through
+the course project and so on. Don't mix property binding & string inerpolation. You might notice then we have quotation marks and then directily,
+our property name. There are no curly braces between these quotation marks and there shouldn't be, because, that will break the app, this will not work.
+Between the quotation marks of property binding, you can you must already write TypeScript code so to say, a TypeScript expression which will return
+the value this property expects, so for disabled some expression which returns true or false. So just like string interpolation, you may also call a method
+ there but you must nod add curly braces in there.Whilst it might look we simply use a HTML attribute there. We aren't -->
+
+
 <app-server></app-server>
 <app-server></app-server>
