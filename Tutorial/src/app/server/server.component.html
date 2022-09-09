@@ -1,2 +1,23 @@
-<p> {{ 'Server' }} with ID {{ serverID }} is {{ serverStatus }} </p> <!-- No multiline, no block expression, no if, no for, no control structure -->
+<!-- <p> {{ 'Server' }} with ID {{ serverID }} is {{ serverStatus }} </p>-->  <!-- No multiline, no block expression, no if, no for, no control structure -->
 <!--  But you can call here a Method!  -->
+
+<!-- possible, no camel case: --><!-- <p [ngStyle]="{'background-color': 'red'}"> {{ 'Server' }} with ID {{ serverID }} is {{ serverStatus }} </p> --> <!-- No multiline, no block expression, no if, no for, no control structure -->
+<!-- possible, with camel case --><!-- <p [ngStyle]="{backgroundColor: getColor()}"> {{ 'Server' }} with ID {{ serverID }} is {{ serverStatus }} </p> -->
+<!-- Not that's a built-in directive, you can recognize this on the ng at the beginning and ngStyle, that's the driective, is prette useless like this,
+ we need to give it some configuration to do something, that is why we will use porperty binding on this directive and it's super important to understand that
+ the square bracket HERE ARE NO PART of the directive name, the directive name is just ngStyle, the square brackets indicate that we want to bind some
+ property on this directive name just ngStyle. The square brackets indicate that we went ot bind to some property on this directive and this property name happend
+ to als be ngStyle. We will see this in practice on our own directives in the directive section later but SUPER IMPORTANT to understand that property
+ binding is not the same as a directive, it's totally different, we are binding to a property of the directive. This ng Style property expects to get
+ a JavaScript object and here, we define key-value pairs of the style name as the key and the value of the style as the value.-->
+
+<!-- Course content: Applying CSS Classes Dynmaically with ng Class -->
+<p [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{online: serverStatus === 'online' }"> {{ 'Server' }} with ID {{ serverID }} is {{ serverStatus }}
+<!-- ngClass this is the dircective, also only works as intended when using property binding. So let's warp it in sqauare brackets, too and here
+ we also need to pass a JavaScript object and that's just the case for this property of this directive here, of course each property you bind to may take
+  different value, like disabled which took true or false. So here it's a JavaScript object and for ngClass object works like this, We also have
+  key value pairs, the keys are the CSS class names and the values are the conditions determining whether this class should be attached or not.
+  So here, we have the online class, you could also wrap this in single quotation marks if you had a class name with dash inside of it or something
+  like this and here, well I want to attach this only if the server is online, so only if serverStatus quals online, online her is a string
+  between single quotation marks. -->
