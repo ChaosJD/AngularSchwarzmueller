@@ -1,2 +1,2 @@
 # AngularSchwarzmueller
-AngularTutorial
+AngularTutorial - The Complete Guide
